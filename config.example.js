@@ -11,19 +11,22 @@ config = {
     // When running Ghost in the wild, use the production environment.
     // Configure your URL and mail settings here
     production: {
-        url: 'http://my-ghost-blog.com',
+        url: 'http://techbubblelife.com',
         mail: {},
         database: {
-            client: 'sqlite3',
+            client: 'postgres',
             connection: {
-                filename: path.join(__dirname, '/content/data/ghost.db')
+                host: 'ec2-54-243-243-89.compute-1.amazonaws.com',
+                user:'znvpxmqrpdevad',
+                password: 'VKvqA3vzF33atbU4_owqU6Tzr3',
+                database: 'd6qfpg9pdl9d8f',
+                port: '5432'
             },
-            debug: false
         },
 
         server: {
-            host: '127.0.0.1',
-            port: '2368'
+            host: '0.0.0.0',
+            port: 'process.env.PORT'
         }
     },
 
